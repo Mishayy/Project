@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".QuestionActivity">
+
+
+    <TextView
+        android:id="@+id/timer_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+
+    <TextView
+        android:id="@+id/Score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="62dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="28sp" />
+
+    <TextView
+        android:id="@+id/question_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
+
+        android:id="@+id/question_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/option_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:backgroundTint="@color/colorAccent" />
+
+        <Button
+            android:id="@+id/option_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:backgroundTint="@color/colorAccent" />
+
+        <Button
+            android:id="@+id/option_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/back_to_Start_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="117dp"
+        android:backgroundTint="@color/colorAccent"
+        android:text="Back to Start" />
+
+
+    <Button
+        android:id="@+id/next_question_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:textColor="#FFFFFF"
+        android:visibility="gone" />
+
+
+</RelativeLayout>
