@@ -4,41 +4,68 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+    android:gravity="center_horizontal"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
     tools:context=".QuestionActivity">
 
+    <TextView
+        android:id="@+id/timer_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/timer_label"
+        android:textColor="@color/accentColor"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/score_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="41dp"
+        android:layout_toStartOf="@id/timer_label"
+        android:layout_toRightOf="@id/timer_label"
+        android:text="@string/score_label"
+        android:textColor="@color/accentColor"
+        android:textSize="16sp"
+        tools:ignore="RtlHardcoded" />
 
     <TextView
         android:id="@+id/timer_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/score_label"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
         android:gravity="center"
-        android:textColor="#000000"
-        android:textSize="20sp" />
-
+        android:textColor="@color/accentColor"
+        android:textSize="20sp"
+        tools:text="00:10" />
 
     <TextView
         android:id="@+id/Score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="62dp"
+        android:layout_below="@id/score_label"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="61dp"
         android:gravity="center"
-        android:textColor="#000000"
-        android:textSize="28sp" />
+        android:textColor="@color/accentColor"
+        android:textSize="20sp"
+        tools:text="5" />
 
     <TextView
         android:id="@+id/question_one"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="120dp"
+        android:gravity="center_horizontal"
         android:textColor="#000000"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:text="What is the capital city of nicaragua and the dominican republic?" />
 
 
     <LinearLayout
@@ -47,7 +74,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:orientation="vertical">
 
@@ -57,20 +83,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:backgroundTint="@color/colorAccent" />
+            android:backgroundTint="@color/buttonColor"
+            android:textColor="@color/textColor" />
 
         <Button
             android:id="@+id/option_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:backgroundTint="@color/colorAccent" />
+            android:backgroundTint="@color/buttonColor"
+            android:textColor="@color/textColor" />
 
         <Button
             android:id="@+id/option_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorAccent" />
+            android:backgroundTint="@color/buttonColor"
+            android:textColor="@color/textColor" />
 
 
     </LinearLayout>
@@ -82,18 +111,19 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="117dp"
-        android:backgroundTint="@color/colorAccent"
-        android:text="Back to Start" />
+        android:backgroundTint="@color/buttonColor"
+        android:text="@string/back_to_start" />
 
 
     <Button
-        android:id="@+id/next_question_text_view"
+        android:id="@+id/next_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
-        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/buttonColor"
+        android:textColor="@color/textColor"
         android:visibility="gone" />
 
 

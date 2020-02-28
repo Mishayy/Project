@@ -5,40 +5,38 @@ import androidx.appcompat.app.AppCompatActivity;
 public class QuestionsDB extends AppCompatActivity {
 
 
-
-
-    private String mQuestions[] = {
-            "Q1: What does USB stand for?",
-            "Q2: What is the capital city of Canada?",
-            "Q3: Who was the 16th president of the United States?",
-            "Q4: Which political party freed the slaves in the United States?",
-            "Q5: Which african countries were not colonized?",
-            "Q6: What was coca-cola first marketed as?",
-            "Q7: What type of creature is a Red Mullet?",
-            "Q8: Who is Thor's father?",
-            "Q9: In which year was Apple founded?",
-            "Q10: What does 'Phillia' refer to?",
-            "Q11: How old was Jimi Hendrix when he lost his virginity?",
-            "Q12: Where is tea from?",
+    private String[] mQuestions = {
+            " It was all a dream, I used to read Word Up! magazine",
+            " Now, I ain't sayin' you a gold digger, you got needs",
+            " Real Gs move in silence like lasagna",
+            " So I ball so hard muh'fcukas wanna fine me",
+            " These expensive, these is red bottoms",
+            " Wait, if I'm in Dicky's body, Breezy is who",
+            "They was never friendly, yeah, Now I'm jumping out the Bentley, yeah",
+            " Don't save her, she don't wanna be saved",
+            " Yeah, you're lookin' at the truth, the money never lie no",
+            "Pullin' out the coupe at the lot, Told 'em Fuck 12, fcuk SWAT",
+            " This very moment I slay Goliath with a sling",
+            " I look damn good I ain't lost it, And I ain't missed a beat",
     };
 
-    private String mChoices[][] = {
-            {"Universal Saving Biometric", "Universal Serial Bus", "Universal Saving Bio-Port"},
-            {"Quebec", "Ottawa", "Ontario"},
-            {"Dwight Eisenhower", "Abraham Lincoln", "Franklin D. Roosevelt"},
-            {"The Green Party", "The Democratic party", "Grand Old Party (GOP)"},
-            {"Libya and Eritrea", "Ethiopia and Liberia", "Ethiopia and Libya"},
-            {"Floor Cleaner", "Metal Cleaner", "Medicine"},
-            {"Fish", "Bird", "Dog"},
-            {"Odin", "Loki", "Thanos"},
-            {"1980", "1992", "1976"},
-            {"Love", "Hate", "Fear"},
-            {"9 years old", "12 years old", "26 years old"},
-            {"Chad", "China", "England"},
+    private String[][] mChoices = {
+            {"Nas", "Funkmaster Flex", "The Notorious B.I.G"},
+            {"Gold Digger", "Jamie Foxx", "Kanye West"},
+            {"Lil Wayne", "Lil Dicky", "Lil Jon"},
+            {"Jay-Z", "J. Cole", "Snoop Dogg"},
+            {"Bodak Yellow", "Cardi B", "Nicki Minaj"},
+            {"Lil Dicky", "Chris Brown", "Omarion"},
+            {"Justin Bieber", "Post Malone", "Congratulations"},
+            {"J. Cole", "Kendrick Lamar", "DJ Khaled"},
+            {"DJ Khaled", "Justin Bieber", "Quavo"},
+            {"The Box", "Roddy Rich", "Drake"},
+            {"Cardi B", "Beyonce", "Nicki Minaj"},
+            {"Beyonce", "Nicki Minaj", "Ciara"},
     };
 
-    private String mCorrectAnswers[] = {"Universal Serial Bus", "Ottawa", "Abraham Lincoln", "Grand Old Party (GOP)"
-            , "Ethiopia and Liberia", "Medicine", "Fish", "Odin", "1976", "Love", "12 years old", "China"};
+    private String[] mCorrectAnswers = {"The Notorious B.I.G", "Kanye West", "Lil Wayne", "Jay-Z"
+            , "Cardi B", "Lil Dicky", "Post Malone", "J. Cole", "Justin Bieber", "Roddy Rich", "Nicki Minaj", "Beyonce"};
 
 
     public String getQuestion(int a) {

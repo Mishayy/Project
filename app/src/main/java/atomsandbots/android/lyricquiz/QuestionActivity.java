@@ -32,7 +32,7 @@ public class QuestionActivity extends AppCompatActivity {
     TextView mScoreView;
     @BindView(R.id.timer_text_view)
     TextView mTimer;
-    @BindView(R.id.next_question_text_view)
+    @BindView(R.id.next_button)
     TextView mNext;
     @BindView(R.id.back_to_Start_text_view)
     TextView mBackToStart;
@@ -46,8 +46,8 @@ public class QuestionActivity extends AppCompatActivity {
     private long backPressedTime;
 
     private ColorStateList textColorDefaultCT;
+    // instance of "DB"
     private QuestionsDB questionsDB = new QuestionsDB();
-
 
 
     @Override
@@ -75,12 +75,7 @@ public class QuestionActivity extends AppCompatActivity {
                     countDownTimer.cancel();
                     mNext.setVisibility(View.VISIBLE);
 
-
-                    ////Toast messages for correct and wrong answers
-                    Toast.makeText(QuestionActivity.this, "correct", Toast.LENGTH_SHORT).show();
-
                 } else {
-                    Toast.makeText(QuestionActivity.this, "wrong", Toast.LENGTH_SHORT).show();
                     nextUpdate();
                     countDownTimer.cancel();
                     mNext.setVisibility(View.VISIBLE);
@@ -95,18 +90,14 @@ public class QuestionActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if ((mOption2.getText() == mAnswer)) {
+                    //if answer is correct increment score by one
                     mScore = mScore + 1;
                     updateScore();
                     nextUpdate();
                     countDownTimer.cancel();
                     mNext.setVisibility(View.VISIBLE);
 
-
-                    ////Toast messages for correct and wrong answers
-                    Toast.makeText(QuestionActivity.this, "correct", Toast.LENGTH_SHORT).show();
-
                 } else {
-                    Toast.makeText(QuestionActivity.this, "wrong", Toast.LENGTH_SHORT).show();
                     nextUpdate();
                     countDownTimer.cancel();
                     mNext.setVisibility(View.VISIBLE);
@@ -127,17 +118,10 @@ public class QuestionActivity extends AppCompatActivity {
                     countDownTimer.cancel();
                     mNext.setVisibility(View.VISIBLE);
 
-
-                    ////Toast messages for correct and wrong answers
-                    Toast.makeText(QuestionActivity.this, "correct", Toast.LENGTH_SHORT).show();
-
                 } else {
-                    Toast.makeText(QuestionActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
                     nextUpdate();
                     countDownTimer.cancel();
                     mNext.setVisibility(View.VISIBLE);
-
-
                 }
 
             }
@@ -164,8 +148,7 @@ public class QuestionActivity extends AppCompatActivity {
 
 
             }
-        });
-        //END OF ONCLICK LISTENER
+        });//END OF ONCLICK LISTENER
     }
 
     //logic for resetting the questions and choices
@@ -206,21 +189,17 @@ public class QuestionActivity extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
                 timeLeftInMillis = millisUntilFinished;
                 updateCountdownText();
-                //Change color if timer is about to run out.
-                if (timeLeftInMillis < 6000) {
-                    mTimer.setTextColor(Color.RED);
-                }
-
             }
 
             @Override
             public void onFinish() {
                 timeLeftInMillis = 0;
-                //if the counter hits zero all option will disappear
+                //if the counter hits zero question options will disappear
                 mOption1.setVisibility(View.GONE);
                 mOption2.setVisibility(View.GONE);
                 mOption3.setVisibility(View.GONE);
                 mNext.setVisibility(View.VISIBLE);
+                mNext.setText("Next");
                 Toast.makeText(QuestionActivity.this, "TIMED OUT", Toast.LENGTH_SHORT).show();
             }
         }.start();
@@ -253,7 +232,7 @@ public class QuestionActivity extends AppCompatActivity {
 // Updating the score
 
     private void updateScore() {
-        mScoreView.setText(String.valueOf(mScore + "/12"));
+        mScoreView.setText(String.valueOf(mScore));
     }
 
     // Logic to display the final score after all questions have been answered
@@ -287,7 +266,8 @@ public class QuestionActivity extends AppCompatActivity {
             finish();
         } else {
             Toast.makeText(QuestionActivity.this, "Press Back Again Close Quiz", Toast.LENGTH_SHORT).show();
-        }backPressedTime = System.currentTimeMillis();
+        }
+        backPressedTime = System.currentTimeMillis();
     }
 
 }
