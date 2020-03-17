@@ -6,18 +6,18 @@ public class QuestionsDB extends AppCompatActivity {
 
 
     private String[] mQuestions = {
-            " It was all a dream, I used to read Word Up! magazine",
-            " Now, I ain't sayin' you a gold digger, you got needs",
-            " Real Gs move in silence like lasagna",
-            " So I ball so hard muh'fcukas wanna fine me",
-            " These expensive, these is red bottoms",
-            " Wait, if I'm in Dicky's body, Breezy is who",
-            "They was never friendly, yeah, Now I'm jumping out the Bentley, yeah",
-            " Don't save her, she don't wanna be saved",
-            " Yeah, you're lookin' at the truth, the money never lie no",
-            "Pullin' out the coupe at the lot, Told 'em Fuck 12, fcuk SWAT",
-            " This very moment I slay Goliath with a sling",
-            " I look damn good I ain't lost it, And I ain't missed a beat",
+            "\"It was all a dream, I used to read Word Up! magazine\"",
+            "\"Now, I ain't sayin' you a gold digger, you got needs\"",
+            "\"Real Gs move in silence like lasagna\"",
+            "\"So I ball so hard muh'fcukas wanna fine me\"",
+            "\"These expensive, these is red bottoms\"",
+            "\"Wait, if I'm in Dicky's body, Breezy is who\"",
+            "\"They was never friendly, yeah, Now I'm jumping out the Bentley, yeah\"",
+            "\"Don't save her, she don't wanna be saved\"",
+            "\"Yeah, you're lookin' at the truth, the money never lie no\"",
+            "\"Pullin' out the coupe at the lot, Told 'em Fuck 12, fcuk SWAT\"",
+            "\"This very moment I slay Goliath with a sling\"",
+            "\"I look damn good I ain't lost it, And I ain't missed a beat\"",
     };
 
     private String[][] mChoices = {

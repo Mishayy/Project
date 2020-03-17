@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/backgroundColor2"
     android:gravity="center_horizontal"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
@@ -41,7 +41,7 @@
         android:gravity="center"
         android:textColor="@color/accentColor"
         android:textSize="20sp"
-        tools:text="00:10" />
+        tools:text="00:12" />
 
     <TextView
         android:id="@+id/Score"
@@ -55,6 +55,16 @@
         android:textColor="@color/accentColor"
         android:textSize="20sp"
         tools:text="5" />
+
+    <TextView
+        android:id="@+id/final_score_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/accentColor"
+        android:textSize="26sp"
+        tools:text="12 out of 12"/>
 
     <TextView
         android:id="@+id/question_one"
@@ -73,7 +83,6 @@
         android:id="@+id/question_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
         android:orientation="vertical">
 
@@ -82,6 +91,7 @@
             android:id="@+id/option_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:layout_marginBottom="15dp"
             android:backgroundTint="@color/buttonColor"
             android:textColor="@color/textColor" />
@@ -111,7 +121,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="117dp"
-        android:backgroundTint="@color/buttonColor"
+        android:background="@drawable/button_shape"
         android:text="@string/back_to_start" />
 
 
@@ -122,7 +132,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
-        android:backgroundTint="@color/buttonColor"
+        android:background="@drawable/button_shape"
         android:textColor="@color/textColor"
         android:visibility="gone" />
 

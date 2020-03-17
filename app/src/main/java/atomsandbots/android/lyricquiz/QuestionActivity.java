@@ -36,6 +36,12 @@ public class QuestionActivity extends AppCompatActivity {
     TextView mNext;
     @BindView(R.id.back_to_Start_text_view)
     TextView mBackToStart;
+    @BindView(R.id.score_label)
+    TextView mScoreLabel;
+    @BindView(R.id.timer_label)
+    TextView mTimerLabel;
+    @BindView(R.id.final_score_view)
+    TextView mFinalScore;
 
     private static final long COUNTDOWN_IN_MILLIS = 12000;
     private CountDownTimer countDownTimer;
@@ -44,8 +50,8 @@ public class QuestionActivity extends AppCompatActivity {
     private int mScore;
     private int mQuestionNumber = 0;
     private long backPressedTime;
-
     private ColorStateList textColorDefaultCT;
+
     // instance of "DB"
     private QuestionsDB questionsDB = new QuestionsDB();
 
@@ -146,7 +152,6 @@ public class QuestionActivity extends AppCompatActivity {
                 Intent intent = new Intent(QuestionActivity.this, StartQuiz.class);
                 startActivity(intent);
 
-
             }
         });//END OF ONCLICK LISTENER
     }
@@ -193,6 +198,7 @@ public class QuestionActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
+
                 timeLeftInMillis = 0;
                 //if the counter hits zero question options will disappear
                 mOption1.setVisibility(View.GONE);
@@ -200,7 +206,7 @@ public class QuestionActivity extends AppCompatActivity {
                 mOption3.setVisibility(View.GONE);
                 mNext.setVisibility(View.VISIBLE);
                 mNext.setText("Next");
-                Toast.makeText(QuestionActivity.this, "TIMED OUT", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(QuestionActivity.this, "TIMED OUT", Toast.LENGTH_SHORT).show();
             }
         }.start();
     }
@@ -240,12 +246,16 @@ public class QuestionActivity extends AppCompatActivity {
     private void displayScore() {
 
 
-        mScoreView.setText(String.valueOf("Final score: " + mScore + " out of 12"));
+        mFinalScore.setText(String.valueOf("Final score: " + mScore + " out of 12"));
         mQuestionView.setVisibility(View.GONE);
         mOption1.setVisibility(View.GONE);
         mOption2.setVisibility(View.GONE);
         mOption3.setVisibility(View.GONE);
-        mNext.setVisibility(View.INVISIBLE);
+        mNext.setVisibility(View.GONE);
+        mTimer.setVisibility(View.GONE);
+        mScoreView.setVisibility(View.GONE);
+        mScoreLabel.setVisibility(View.GONE);
+        mTimerLabel.setVisibility(View.GONE);
         mBackToStart.setVisibility(View.VISIBLE);
 
     }

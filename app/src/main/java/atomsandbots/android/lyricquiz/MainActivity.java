@@ -7,16 +7,29 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
+
+
 public class MainActivity extends AppCompatActivity {
 
+    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        imageView = findViewById(R.id.splash_logo_two);
+
+        Picasso.get()
+                .load(R.drawable.splash_logo_image)
+                .fit()
+                .centerInside()
+                .placeholder(R.drawable.ic_launcher_background)
+                .into(imageView);
+
         //Splash screen set for 3 seconds
-        int SPLASH_TIME_OUT = 3000;
+        int SPLASH_TIME_OUT = 8000;
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -27,5 +40,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }, SPLASH_TIME_OUT);
+
     }
 }
