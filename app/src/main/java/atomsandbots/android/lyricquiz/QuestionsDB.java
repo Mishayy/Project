@@ -4,18 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class QuestionsDB extends AppCompatActivity {
 
-
-    private String[] mQuestions = {
+    public String[] mQuestions = {
             "\"It was all a dream, I used to read Word Up! magazine\"",
             "\"Now, I ain't sayin' you a gold digger, you got needs\"",
             "\"Real Gs move in silence like lasagna\"",
-            "\"So I ball so hard muh'fcukas wanna fine me\"",
+            "\"Ball so hard, let's get faded, Le Meurice for like six days\"",
             "\"These expensive, these is red bottoms\"",
-            "\"Wait, if I'm in Dicky's body, Breezy is who\"",
+            "\"Ain't nobody judging 'cause I'm black or my controversial past\"",
             "\"They was never friendly, yeah, Now I'm jumping out the Bentley, yeah\"",
             "\"Don't save her, she don't wanna be saved\"",
             "\"Yeah, you're lookin' at the truth, the money never lie no\"",
-            "\"Pullin' out the coupe at the lot, Told 'em Fuck 12, fcuk SWAT\"",
+            "\"Pour up the whole damn seal, I'ma get lazy\"",
             "\"This very moment I slay Goliath with a sling\"",
             "\"I look damn good I ain't lost it, And I ain't missed a beat\"",
     };
@@ -26,9 +25,9 @@ public class QuestionsDB extends AppCompatActivity {
             {"Lil Wayne", "Lil Dicky", "Lil Jon"},
             {"Jay-Z", "J. Cole", "Snoop Dogg"},
             {"Bodak Yellow", "Cardi B", "Nicki Minaj"},
-            {"Lil Dicky", "Chris Brown", "Omarion"},
+            {"Lil Dicky", "kedrick Lamar", "Omarion"},
             {"Justin Bieber", "Post Malone", "Congratulations"},
-            {"J. Cole", "Kendrick Lamar", "DJ Khaled"},
+            {"J. Cole", "kendrick Lamar", "DJ Khaled"},
             {"DJ Khaled", "Justin Bieber", "Quavo"},
             {"The Box", "Roddy Rich", "Drake"},
             {"Cardi B", "Beyonce", "Nicki Minaj"},

@@ -4,14 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
+
 
 import java.util.Locale;
 
@@ -43,6 +46,9 @@ public class QuestionActivity extends AppCompatActivity {
     @BindView(R.id.final_score_view)
     TextView mFinalScore;
 
+    @BindView(R.id.atoms_and_bots_iv)
+    ImageView mABIv;
+
     private static final long COUNTDOWN_IN_MILLIS = 12000;
     private CountDownTimer countDownTimer;
     private long timeLeftInMillis;
@@ -50,7 +56,7 @@ public class QuestionActivity extends AppCompatActivity {
     private int mScore;
     private int mQuestionNumber = 0;
     private long backPressedTime;
-    private ColorStateList textColorDefaultCT;
+
 
     // instance of "DB"
     private QuestionsDB questionsDB = new QuestionsDB();
@@ -62,11 +68,18 @@ public class QuestionActivity extends AppCompatActivity {
         setContentView(R.layout.question_activity);
         ButterKnife.bind(this);
 
-        //Back to start always invisible until the end.
+        //Back to start and ABIv always invisible until the end.
         mBackToStart.setVisibility(View.GONE);
+        mABIv.setVisibility(View.GONE);
 
-        textColorDefaultCT = mTimer.getTextColors();
         updateQuestion();
+
+        Picasso.get()
+                .load(R.drawable.atomsandbots)
+                .fit()
+                .centerInside()
+                .placeholder(R.drawable.ic_launcher_background)
+                .into(mABIv);
 
 
         //onclickListener for the first choice
@@ -158,9 +171,6 @@ public class QuestionActivity extends AppCompatActivity {
 
     //logic for resetting the questions and choices
     private void updateQuestion() {
-        //Changing the text color to Default state
-        mTimer.setTextColor(textColorDefaultCT);
-
 
         //The code below resets the option
         mOption1.setVisibility(View.VISIBLE);
@@ -171,7 +181,8 @@ public class QuestionActivity extends AppCompatActivity {
         int questionSize = 12;
 
         if (mQuestionNumber < questionSize) {
-            mQuestionView.setText(questionsDB.getQuestion(mQuestionNumber));
+
+            mQuestionView.setText((questionsDB.getQuestion(mQuestionNumber)));
             mOption1.setText(questionsDB.getChoice1(mQuestionNumber));
             mOption2.setText(questionsDB.getChoice2(mQuestionNumber));
             mOption3.setText(questionsDB.getChoice3(mQuestionNumber));
@@ -180,6 +191,7 @@ public class QuestionActivity extends AppCompatActivity {
             mQuestionNumber++;
             timeLeftInMillis = COUNTDOWN_IN_MILLIS;
             startCountDown();
+
 
         } else {
             displayScore();
@@ -205,7 +217,7 @@ public class QuestionActivity extends AppCompatActivity {
                 mOption2.setVisibility(View.GONE);
                 mOption3.setVisibility(View.GONE);
                 mNext.setVisibility(View.VISIBLE);
-                mNext.setText("Next");
+                mNext.setText(R.string.next_tv_java);
                 //Toast.makeText(QuestionActivity.this, "TIMED OUT", Toast.LENGTH_SHORT).show();
             }
         }.start();
@@ -230,15 +242,14 @@ public class QuestionActivity extends AppCompatActivity {
             mOption3.setVisibility(View.GONE);
             mNext.setVisibility(View.VISIBLE);
             mNext.setTextColor(Color.WHITE);
-            mNext.setText("Next");
+            mNext.setText(R.string.next_text_view_java);
         }
     }
 
 
 // Updating the score
-
     private void updateScore() {
-        mScoreView.setText(String.valueOf(mScore));
+        mScoreView.setText(mScore + " of 12");
     }
 
     // Logic to display the final score after all questions have been answered
@@ -246,7 +257,7 @@ public class QuestionActivity extends AppCompatActivity {
     private void displayScore() {
 
 
-        mFinalScore.setText(String.valueOf("Final score: " + mScore + " out of 12"));
+        mFinalScore.setText("Final score: " + mScore);
         mQuestionView.setVisibility(View.GONE);
         mOption1.setVisibility(View.GONE);
         mOption2.setVisibility(View.GONE);
@@ -257,6 +268,7 @@ public class QuestionActivity extends AppCompatActivity {
         mScoreLabel.setVisibility(View.GONE);
         mTimerLabel.setVisibility(View.GONE);
         mBackToStart.setVisibility(View.VISIBLE);
+        mABIv.setVisibility(View.VISIBLE);
 
     }
 

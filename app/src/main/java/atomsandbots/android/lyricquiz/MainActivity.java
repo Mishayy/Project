@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         imageView = findViewById(R.id.splash_logo_two);
-
         Picasso.get()
                 .load(R.drawable.splash_logo_image)
                 .fit()
@@ -29,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
                 .into(imageView);
 
         //Splash screen set for 3 seconds
-        int SPLASH_TIME_OUT = 8000;
+        int SPLASH_TIME_OUT = 4000;
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
