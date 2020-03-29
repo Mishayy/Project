@@ -39,15 +39,10 @@ public class QuestionActivity extends AppCompatActivity {
     TextView mNext;
     @BindView(R.id.back_to_Start_text_view)
     TextView mBackToStart;
-    @BindView(R.id.score_label)
-    TextView mScoreLabel;
     @BindView(R.id.timer_label)
     TextView mTimerLabel;
     @BindView(R.id.final_score_view)
     TextView mFinalScore;
-
-    @BindView(R.id.atoms_and_bots_iv)
-    ImageView mABIv;
 
     private static final long COUNTDOWN_IN_MILLIS = 12000;
     private CountDownTimer countDownTimer;
@@ -68,19 +63,8 @@ public class QuestionActivity extends AppCompatActivity {
         setContentView(R.layout.question_activity);
         ButterKnife.bind(this);
 
-        //Back to start and ABIv always invisible until the end.
-        mBackToStart.setVisibility(View.GONE);
-        mABIv.setVisibility(View.GONE);
 
         updateQuestion();
-
-        Picasso.get()
-                .load(R.drawable.atomsandbots)
-                .fit()
-                .centerInside()
-                .placeholder(R.drawable.ic_launcher_background)
-                .into(mABIv);
-
 
         //onclickListener for the first choice
         mOption1.setOnClickListener(new View.OnClickListener() {
@@ -92,11 +76,13 @@ public class QuestionActivity extends AppCompatActivity {
                     updateScore();
                     nextUpdate();
                     countDownTimer.cancel();
+                    mBackToStart.setVisibility(View.GONE);
                     mNext.setVisibility(View.VISIBLE);
 
                 } else {
                     nextUpdate();
                     countDownTimer.cancel();
+                    mBackToStart.setVisibility(View.GONE);
                     mNext.setVisibility(View.VISIBLE);
                 }
 
@@ -114,11 +100,13 @@ public class QuestionActivity extends AppCompatActivity {
                     updateScore();
                     nextUpdate();
                     countDownTimer.cancel();
+                    mBackToStart.setVisibility(View.GONE);
                     mNext.setVisibility(View.VISIBLE);
 
                 } else {
                     nextUpdate();
                     countDownTimer.cancel();
+                    mBackToStart.setVisibility(View.GONE);
                     mNext.setVisibility(View.VISIBLE);
                 }
 
@@ -135,11 +123,13 @@ public class QuestionActivity extends AppCompatActivity {
                     updateScore();
                     nextUpdate();
                     countDownTimer.cancel();
+                    mBackToStart.setVisibility(View.GONE);
                     mNext.setVisibility(View.VISIBLE);
 
                 } else {
                     nextUpdate();
                     countDownTimer.cancel();
+                    mBackToStart.setVisibility(View.GONE);
                     mNext.setVisibility(View.VISIBLE);
                 }
 
@@ -265,10 +255,8 @@ public class QuestionActivity extends AppCompatActivity {
         mNext.setVisibility(View.GONE);
         mTimer.setVisibility(View.GONE);
         mScoreView.setVisibility(View.GONE);
-        mScoreLabel.setVisibility(View.GONE);
         mTimerLabel.setVisibility(View.GONE);
         mBackToStart.setVisibility(View.VISIBLE);
-        mABIv.setVisibility(View.VISIBLE);
 
     }
 

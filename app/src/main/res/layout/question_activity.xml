@@ -9,37 +9,42 @@
     android:paddingRight="10dp"
     tools:context=".QuestionActivity">
 
+    <ImageView
+        android:id="@+id/bg"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-61dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/bg"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:src="@drawable/logobg"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp" />
+
+
     <TextView
         android:id="@+id/timer_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
         android:text="@string/timer_label"
-        android:textColor="@color/accentColor"
+        android:textColor="@color/black"
         android:textSize="16sp" />
-
-    <TextView
-        android:id="@+id/score_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="41dp"
-        android:layout_toStartOf="@id/timer_label"
-        android:layout_toRightOf="@id/timer_label"
-        android:text="@string/score_label"
-        android:textColor="@color/accentColor"
-        android:textSize="16sp"
-        tools:ignore="RtlHardcoded" />
 
     <TextView
         android:id="@+id/timer_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/score_label"
+        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="27dp"
         android:gravity="center"
-        android:textColor="@color/accentColor"
+        android:textColor="@color/black"
         android:textSize="20sp"
         tools:text="00:12" />
 
@@ -47,12 +52,9 @@
         android:id="@+id/Score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/score_label"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="61dp"
-        android:gravity="center"
-        android:textColor="@color/accentColor"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="145dp"
+        android:textColor="@color/black"
         android:textSize="20sp"
         tools:text="5" />
 
@@ -61,22 +63,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_alignParentTop="true"
-        android:textColor="@color/accentColor"
+        android:gravity="center"
+        android:textColor="@color/black"
         android:textSize="26sp"
-        tools:text="12 out of 12"/>
+        tools:text=""/>
+
 
     <TextView
         android:id="@+id/question_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="200dp"
         android:gravity="center_horizontal"
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
         tools:text="What is the capital city of nicaragua and the dominican republic?" />
-
 
     <LinearLayout
 
@@ -90,25 +92,28 @@
 
         <Button
             android:id="@+id/option_1"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="15dp"
+            android:layout_gravity="center"
             android:backgroundTint="@color/buttonColor"
             android:textColor="@color/textColor" />
 
         <Button
             android:id="@+id/option_2"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
+            android:layout_gravity="center"
             android:backgroundTint="@color/buttonColor"
             android:textColor="@color/textColor" />
 
         <Button
             android:id="@+id/option_3"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:backgroundTint="@color/buttonColor"
             android:textColor="@color/textColor" />
 
@@ -123,6 +128,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="117dp"
         android:background="@drawable/button_shape"
+        android:textColor="@color/black"
         android:text="@string/back_to_start" />
 
 
@@ -136,15 +142,6 @@
         android:background="@drawable/button_shape"
         android:textColor="@color/textColor"
         android:visibility="gone" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:id="@+id/atoms_and_bots_iv"
-        android:layout_below="@+id/next_button"
-        android:contentDescription="TODO" />
 
 
 </RelativeLayout>

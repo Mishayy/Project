@@ -5,7 +5,8 @@
     <color name="backgroundColor">#00B0FF</color>
     <color name="backgroundColor2">#e1f5fe</color>
     <color name="accentColor">#00B0FF</color>
-    <color name="buttonColor">#00B0FF</color>
+    <color name="buttonColor">#9DCDE3</color>
     <color name="textColor">#FFFFFF</color>
+    <color name="black">#000000</color>
 
 </resources>

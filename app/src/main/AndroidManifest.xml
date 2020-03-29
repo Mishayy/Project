@@ -4,9 +4,8 @@
     package="atomsandbots.android.lyricquiz">
 
     <application
-        android:icon="@mipmap/launcher_icon_ai"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/launcher_icon_ai"
+        android:icon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
